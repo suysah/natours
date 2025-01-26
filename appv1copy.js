@@ -15,7 +15,6 @@ app.use(express.json());
 //our awn middle ware
 
 app.use((req, res, next) => {
-  console.log('hello from middlware');
   next();
 });
 

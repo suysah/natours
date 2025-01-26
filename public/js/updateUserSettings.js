@@ -18,8 +18,8 @@ const updateSettings = async (data, type) => {
   try {
     const url =
       type === 'password'
-        ? 'http://localhost:8000/api/v1/users/updatePassword'
-        : 'http://localhost:8000/api/v1/users/updateMe';
+        ? '/api/v1/users/updatePassword'
+        : '/api/v1/users/updateMe';
 
     const res = await axios({
       method: 'PATCH', // Corrected HTTP method
@@ -27,7 +27,7 @@ const updateSettings = async (data, type) => {
       data,
     });
 
-    console.log(res);
+    // console.log(res);
 
     if (res.data.status === 'success') {
       // Check for response success

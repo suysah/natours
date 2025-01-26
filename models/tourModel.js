@@ -164,11 +164,11 @@ tourSchema.pre(/^find/, function (next) {
   this.start = Date.now();
   next();
 });
-tourSchema.post(/^find/, function (doc, next) {
-  console.log(`query took ${Date.now() - this.start} milliseconds`);
-  // console.log(doc);
-  next();
-});
+// tourSchema.post(/^find/, function (doc, next) {
+//   console.log(`query took ${Date.now() - this.start} milliseconds`);
+//   // console.log(doc);
+//   next();
+// });
 
 //mongoose AGGEGATE MIDDLEWARE
 // tourSchema.pre('aggregate', function (next) {

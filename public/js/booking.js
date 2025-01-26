@@ -14,7 +14,7 @@ const bookTour = async (tourId, formData) => {
   try {
     const tourResponse = await axios({
       method: 'GET',
-      url: `http://localhost:8000/api/v1/tours/${tourId}`,
+      url: `/api/v1/tours/${tourId}`,
     });
 
     const tour = tourResponse.data.data;
@@ -30,7 +30,7 @@ const bookTour = async (tourId, formData) => {
 
     const sessionResponse = await axios({
       method: 'POST',
-      url: `http://localhost:8000/api/v1/payments/get-payment`,
+      url: `/api/v1/payments/get-payment`,
       data: {
         card_no: formData.get('card-number'),
         cvv: formData.get('cvv'),
@@ -46,7 +46,7 @@ const bookTour = async (tourId, formData) => {
 
     const booking = await axios({
       method: 'POST',
-      url: `http://localhost:8000/api/v1/bookings/`,
+      url: `/api/v1/bookings/`,
       data: {
         tour: tourId,
         price: tour.data.price,
@@ -63,7 +63,7 @@ const bookTour = async (tourId, formData) => {
       }, 3000);
     }
   } catch (err) {
-    console.log(err);
+    // console.log(err);
 
     showAlert('error', 'Payment failed. Please try again.');
   }
