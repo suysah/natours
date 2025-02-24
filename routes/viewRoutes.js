@@ -15,6 +15,12 @@ router.get(
 // router.get('/tour', viewsController.getTour);
 router.get('/tour/:name', authController.isLoggedIn, viewsController.getTour);
 router.get('/login', authController.isLoggedIn, viewsController.getLoginForm);
+router.get(
+  '/sign-up',
+  authController.isLoggedIn,
+  viewsController.getSignUpForm
+);
+
 router.get('/me', authController.protect, viewsController.getAccount);
 router.get('/my-tours', authController.protect, viewsController.getMyTours);
 router.get(
