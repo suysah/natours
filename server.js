@@ -21,7 +21,7 @@ const DB = process.env.DATABASE.replace(
 
 // Connect to MongoDB
 mongoose
-  .connect(DB, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(DB)
   .then(() => {
     console.log('Database connection successful');
   })
@@ -32,7 +32,7 @@ mongoose
   });
 
 // Start the server
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 const server = app.listen(port, () => {
   console.log(`App running on port ${port}...`);
 });
